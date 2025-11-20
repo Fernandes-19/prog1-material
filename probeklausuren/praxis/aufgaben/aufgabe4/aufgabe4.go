@@ -10,6 +10,17 @@ ZUSATZBEDINGUNG: Die Funktion muss rekursiv sein!
 // jeweils das größere der beiden Elemente enthält.
 // Falls eine Position nur in einer Liste vorkommt, gilt dieses Element als das größere.
 func MaxElements(l1, l2 []int) []int {
-	// TODO
+
+	if len(l1) == 0 {
+		return l2
+	}
+	if len(l2) == 0 {
+		return l1
+	}
+	xbigger := l1[0]
+	if xbigger > l2[0] {
+		xbigger = l2[0]
+		return append([]int{xbigger}, MaxElements(l1[1:], l2[1:])...)
+	}
 	return []int{}
 }
