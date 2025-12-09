@@ -8,6 +8,17 @@ package aufgabe3
 // CountSquares erwartet eine Liste von Zahlen.
 // CountSquares liefert die Anzahl der QuadratzahlenZahlen in der Liste.
 func CountSquares(list []int) int {
-	// TODO
-	return 0
+
+	if len(list) == 0 {
+		return 0
+	}
+
+	for x := 0; x <= list[0]; x++ {
+		if x*x == list[0] {
+			return 1 + CountSquares(list[1:])
+		}
+
+	}
+
+	return CountSquares(list[1:])
 }

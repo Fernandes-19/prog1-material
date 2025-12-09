@@ -18,9 +18,9 @@ func MaxElements(l1, l2 []int) []int {
 		return l1
 	}
 	xbigger := l1[0]
-	if xbigger > l2[0] {
+	if xbigger < l2[0] {
 		xbigger = l2[0]
-		return append([]int{xbigger}, MaxElements(l1[1:], l2[1:])...)
+
 	}
-	return []int{}
+	return append([]int{xbigger}, MaxElements(l1[1:], l2[1:])...)
 }

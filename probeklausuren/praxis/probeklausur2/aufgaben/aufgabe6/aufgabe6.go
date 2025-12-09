@@ -11,7 +11,21 @@ package aufgabe6
 // Elemente, die schon in list mehrfach vorkommen, sollen wie sie sind
 // ins Ergebnis übertragen werden.
 func DuplicateSinglets(list []int) []int {
-	result := []int{}
-	// TODO
+
+	var result []int
+
+	for _, v := range list {
+		count := 0
+		for _, x := range list {
+			if x == v {
+				count++
+			}
+		}
+		if count == 1 {
+			result = append(result, v, v)
+		} else {
+			result = append(result, v)
+		}
+	}
 	return result
 }

@@ -15,7 +15,7 @@ func ShortestAbc(list []string) string {
 	result := ""
 
 	for _, x := range list {
-		if len(x) >= 3 && x[:3] == "abc" && maxlength > len(x) {
+		if len(x) >= 3 && x[:3] == "abc" && len(x) < maxlength {
 			maxlength = len(x)
 			result = x
 		}
